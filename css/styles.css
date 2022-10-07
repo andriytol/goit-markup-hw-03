@@ -10,7 +10,7 @@ html {
 
 :root {
   --accent-color: #757575;
-  --gray-color: #2F303A;
+  --gray-color: #2f303a;
   --title-text-color: #212121;
   --white-color: #ffffff;
   --bg-white-color: #f5f4fa;
@@ -22,7 +22,6 @@ body {
   font-family: roboto, sans-serif;
   font-size: 14px;
   font-weight: 400;
-  letter-spacing: 0.03em;
 }
 
 .container {
@@ -35,6 +34,11 @@ body {
   list-style: none;
   margin: 0;
   padding: 0;
+}
+
+.no-margin-padding {
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 /* header------------------------------------------ */
@@ -61,6 +65,7 @@ body {
   font-size: 26px;
   line-height: 1.19;
   font-weight: 700;
+  letter-spacing: 0.03em;
 }
 
 .logo-web {
@@ -93,25 +98,26 @@ body {
   color: var(--blue-color);
 }
 
-.div-auth {
+.auth-nav {
+  display: flex;
   margin-left: auto;
 }
 
-.auth-nav {
+.auth-item:not(:last-child) {
+  margin-right: 50px;
+}
+
+.auth-item:hover,
+.auth-item:focus {
+  color: var(--blue-color);
+}
+
+.auth-link {
   color: currentColor;
   text-decoration: none;
   font-weight: 500;
   line-height: 1.14;
   letter-spacing: 0.02em;
-}
-
-.auth-nav:not(:last-child) {
-  margin-right: 50px;
-}
-
-.auth-nav:hover,
-.auth-nav:focus {
-  color: var(--blue-color);
 }
 
 /* service------------------------------------------ */
@@ -154,11 +160,6 @@ body {
   padding-bottom: 94px;
 }
 
-.benefits-title {
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
 .benefits-list {
   display: flex;
 }
@@ -172,17 +173,19 @@ body {
 }
 
 .benefits-subject {
+  margin-bottom: 10px;
   color: var(--title-text-color);
   font-weight: 700;
   line-height: 1.14;
   text-transform: uppercase;
-  margin-top: 0;
-  margin-bottom: 0;
+
+  letter-spacing: 0.03em;
 }
 
 .benefits-text {
   font-size: 14px;
   line-height: 1.71;
+  letter-spacing: 0.03em;
 }
 
 /* activity------------------------------------------ */
@@ -196,15 +199,15 @@ body {
   font-size: 36px;
   line-height: 1.17;
   text-align: center;
-  margin-top: 0;
   margin-bottom: 50px;
+  letter-spacing: 0.03em;
 }
 
-.div-activity {
+.activity-list {
   display: flex;
 }
 
-.activity-img:not(:last-child) {
+.activity-item:not(:last-child) {
   margin-right: 30px;
 }
 
@@ -221,8 +224,8 @@ body {
   font-size: 36px;
   line-height: 1.17;
   text-align: center;
-  margin-top: 0;
   margin-bottom: 50px;
+  letter-spacing: 0.03em;
 }
 
 .team-list {
@@ -232,8 +235,7 @@ body {
 .team-item {
   background-color: var(--white-color);
   border-radius: 0px 0px 4px 4px;
-  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12),
-   0px 1px 1px rgba(0, 0, 0, 0.14),
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
 }
 
@@ -241,8 +243,9 @@ body {
   margin-left: 30px;
 }
 
-.team-img {
-  margin-bottom: 30px;
+.title-div {
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
 
 .team-name {
@@ -252,12 +255,14 @@ body {
   line-height: 1.19;
   text-align: center;
   margin-bottom: 10px;
+  letter-spacing: 0.03em;
 }
 
 .team-professional {
   font-size: 16px;
   line-height: 1.19;
   text-align: center;
+  letter-spacing: 0.03em;
 }
 
 /* footer------------------------------------------ */
@@ -280,22 +285,21 @@ body {
   flex-direction: column;
 }
 
-.footer-address > .address {
-  color: var(--white-color);
-}
-
-.footer-link + .footer-link {
-  color: rgba(255, 255, 255, 0.6);
+.footer-list + .footer-list {
   margin-top: 9px;
 }
 
-.footer-link {
-  color: currentColor;
+.footer-item {
+  color: rgba(255, 255, 255, 0.6);
   text-decoration: none;
   font-style: normal;
   font-weight: 400;
   line-height: 1.71;
   letter-spacing: 0.03em;
+}
+
+.address {
+  color: var(--white-color);
 }
 
 /* portfolio------------------------------------------ */
@@ -325,6 +329,7 @@ body {
   padding: 6px 22px;
   min-width: 73px;
   border-radius: 4px;
+  letter-spacing: 0.03em;
 }
 
 .portfolio-button:hover,
@@ -336,10 +341,6 @@ body {
 .portfolio-items {
   display: flex;
   flex-wrap: wrap;
-}
-
-.item-port {
-  border: 1px solid #EEEEEE;
 }
 
 .item-port:not(:nth-child(3n)) {
@@ -354,26 +355,28 @@ body {
   text-decoration: none;
 }
 
-.portfolio-img {
-  margin-bottom: 20px;
+.portfolio-div {
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-right: 1px solid #eeeeee;
+  border-bottom: 1px solid #eeeeee;
+  border-left: 1px solid #eeeeee;
 }
 
 .portfolio-title {
-  margin-left: 24px;
   color: var(--title-text-color);
   font-weight: 700;
   font-size: 18px;
   line-height: 2;
   letter-spacing: 0.06em;
-  margin-top: 0;
   margin-bottom: 4px;
 }
 
 .portfolio-text {
-  margin-left: 24px;
   color: var(--accent-color);
   font-size: 16px;
   line-height: 1.88;
-  margin-top: 0;
-  margin-bottom: 20px;
+  letter-spacing: 0.03em;
 }
